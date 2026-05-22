@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Phone, CheckCircle2, ArrowRight, Shield } from 'lucide-react';
+import { Phone, CheckCircle2, ArrowRight, Shield, ChevronRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CtaBanner from '@/components/CtaBanner';
 import { SITE, SERVICES, ZONES } from '@/lib/seo';
+import { SERVICE_CONTENT } from '@/lib/service-content';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -36,6 +37,9 @@ export default async function ServicePage({ params }: Props) {
   const service = SERVICES.find((s) => s.slug === slug);
   if (!service) notFound();
 
+  const content = SERVICE_CONTENT[service.slug];
+  const otherServices = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 3);
+
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -47,29 +51,47 @@ export default async function ServicePage({ params }: Props) {
       telephone: SITE.phoneRaw,
       url: SITE.url,
     },
-    areaServed: { '@type': 'State', name: 'Île-de-France' },
+    areaServed: ZONES.map((z) => ({ '@type': 'City', name: z.name })),
     url: `${SITE.url}/services/${service.slug}`,
   };
 
-  const otherServices = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 3);
+  const faqSchema = content ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: content.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+    })),
+  } : null;
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
+
       <Navbar />
       <main>
-        {/* Hero */}
+        {/* ── HERO ─────────────────────────────────────── */}
         <section
           className="py-24 px-4"
           style={{ background: 'linear-gradient(180deg, #0d1b2a 0%, #112236 100%)' }}
         >
           <div className="max-w-4xl mx-auto">
+            {/* Breadcrumb */}
+            <nav className="flex items-center gap-1.5 text-xs text-slate-500 mb-6">
+              <Link href="/" className="hover:text-teal transition-colors">Accueil</Link>
+              <ChevronRight className="w-3 h-3" />
+              <Link href="/services" className="hover:text-teal transition-colors">Services</Link>
+              <ChevronRight className="w-3 h-3" />
+              <span className="text-slate-400">{service.name}</span>
+            </nav>
+
             <div className="badge-teal mb-6 inline-flex">
               <Shield className="w-3.5 h-3.5" />
-              Service spécialisé
+              Service spécialisé — Île-de-France
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-tight mb-6">
               {service.name}
@@ -88,15 +110,82 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </section>
 
-        {/* Zones disponibles */}
-        <section className="py-20 px-4 bg-navy-800">
+        {content && (
+          <>
+            {/* ── QU'EST-CE QUE ─────────────────────────── */}
+            <section className="py-20 px-4 bg-navy-900">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="section-title mb-6">{content.whatIsTitle.toUpperCase()}</h2>
+                {content.whatIsBody.split('\n\n').map((para, i) => (
+                  <p key={i} className="text-slate-400 leading-relaxed mb-4 text-lg">
+                    {para}
+                  </p>
+                ))}
+              </div>
+            </section>
+
+            {/* ── PROTOCOL ─────────────────────────────── */}
+            <section className="py-20 px-4 bg-navy-800">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="section-title mb-12 text-center">
+                  {content.protocolTitle.toUpperCase()}
+                </h2>
+                <div className="flex flex-col gap-6">
+                  {content.steps.map((step) => (
+                    <div key={step.step} className="flex gap-5 items-start">
+                      <div className="shrink-0 w-10 h-10 rounded-full bg-teal/15 border border-teal/30 flex items-center justify-center text-teal font-extrabold text-sm">
+                        {step.step}
+                      </div>
+                      <div>
+                        <h3 className="text-white font-bold mb-1">{step.title}</h3>
+                        <p className="text-slate-400 text-sm leading-relaxed">{step.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ── POURQUOI NOUS ────────────────────────── */}
+            <section className="py-20 px-4 bg-navy-900">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="section-title mb-10 text-center">POURQUOI CHOISIR KIFF CLEANING ?</h2>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {content.whyUs.map((item, i) => (
+                    <div key={i} className="flex items-start gap-3 card-dark">
+                      <CheckCircle2 className="w-5 h-5 text-teal shrink-0 mt-0.5" />
+                      <span className="text-slate-300 text-sm leading-relaxed">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ── FAQ ──────────────────────────────────── */}
+            <section className="py-20 px-4 bg-navy-800">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="section-title mb-10 text-center">QUESTIONS FRÉQUENTES</h2>
+                <div className="flex flex-col gap-5">
+                  {content.faqs.map((faq, i) => (
+                    <div key={i} className="card-dark">
+                      <h3 className="text-white font-bold mb-2">{faq.q}</h3>
+                      <p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </>
+        )}
+
+        {/* ── ZONES ────────────────────────────────── */}
+        <section className="py-20 px-4 bg-navy-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="section-title text-center mb-4">
               {service.name.toUpperCase()} EN ÎLE-DE-FRANCE
             </h2>
             <p className="text-slate-400 text-center mb-10 max-w-xl mx-auto">
-              Nous intervenons pour {service.name.toLowerCase()} dans toutes les
-              villes d'Île-de-France.
+              Nous intervenons pour {service.name.toLowerCase()} dans toutes les villes d'Île-de-France.
             </p>
             <div className="flex flex-wrap justify-center gap-2">
               {ZONES.map((z) => (
@@ -112,8 +201,8 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </section>
 
-        {/* Other services */}
-        <section className="py-20 px-4 bg-navy-900">
+        {/* ── OTHER SERVICES ───────────────────────── */}
+        <section className="py-20 px-4 bg-navy-800">
           <div className="max-w-7xl mx-auto">
             <h2 className="section-title text-center mb-10">NOS AUTRES SERVICES</h2>
             <div className="grid md:grid-cols-3 gap-6">

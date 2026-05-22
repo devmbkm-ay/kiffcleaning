@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import CtaBanner from '@/components/CtaBanner';
 import { SITE } from '@/lib/seo';
 import { ARTICLES } from '../articles';
+import { ARTICLE_CONTENT } from '../content';
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -31,35 +32,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// Contenu statique simplifié pour chaque article
-const CONTENT: Record<string, string> = {
-  'syndrome-de-diogene-comment-intervenir': `
-Le syndrome de Diogène est un trouble du comportement caractérisé par une accumulation compulsive d'objets, une négligence sévère de l'hygiène personnelle et du logement, et un isolement social progressif. Il touche principalement les personnes âgées vivant seules, mais peut concerner tous les profils.
-
-## Reconnaître les signes
-
-Les logements concernés présentent généralement une accumulation extrême d'objets et de déchets, des odeurs très fortes, des risques sanitaires (rongeurs, insectes, moisissures) et une inaccessibilité partielle ou totale des pièces.
-
-## Notre approche
-
-Chez Kiff Cleaning Solutions, nous intervenons avec une équipe formée spécifiquement à la relation avec les personnes concernées par ce syndrome. Notre approche combine rigueur technique et sensibilité humaine.
-
-**Étapes de notre intervention :**
-1. Évaluation initiale et établissement du devis
-2. Préparation logistique (véhicules, équipements, bennes)
-3. Tri respectueux des affaires personnelles
-4. Évacuation des encombrants et déchets
-5. Nettoyage profond et désinfection biocide
-6. Remise en état sanitaire du logement
-
-## Discrétion et confidentialité
-
-Toutes nos interventions pour syndrome de Diogène sont réalisées avec des véhicules banalisés et une discrétion absolue. Nous comprenons la sensibilité de ces situations.
-
-Contactez-nous au ${SITE.phone} pour un devis gratuit.
-  `,
-};
-
 function renderContent(text: string) {
   const lines = text.trim().split('\n');
   return lines.map((line, i) => {
@@ -76,7 +48,7 @@ export default async function ArticlePage({ params }: Props) {
   const article = ARTICLES.find((a) => a.slug === slug);
   if (!article) notFound();
 
-  const content = CONTENT[article.slug] || article.excerpt;
+  const content = ARTICLE_CONTENT[article.slug] || article.excerpt;
 
   const articleSchema = {
     '@context': 'https://schema.org',
