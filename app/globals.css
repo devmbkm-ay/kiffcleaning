@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy-900: #0d1b2a;
+  --navy-800: #112236;
+  --navy-700: #162d46;
+  --navy-600: #1a3654;
+  --teal: #00b894;
+  --teal-light: #00d4aa;
+  --green-cta: #22c55e;
+  --text-primary: #f0f4f8;
+  --text-muted: #94a3b8;
+  --border: rgba(255,255,255,0.08);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--navy-900);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Utility classes ─────────────────────────────── */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-green-500/30;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-teal text-teal hover:bg-teal hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-extrabold tracking-tight text-white uppercase;
+  }
+
+  .card-dark {
+    @apply bg-navy-700 border border-white/10 rounded-xl p-6 hover:border-teal/40 transition-all duration-300;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-slate-300 hover:text-teal transition-colors duration-150;
+  }
+
+  .badge-teal {
+    @apply inline-flex items-center gap-1.5 text-xs font-semibold text-teal bg-teal/10 border border-teal/20 px-2.5 py-1 rounded-full;
+  }
+}
+
+/* ── Animations ──────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+  70%  { box-shadow: 0 0 0 14px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.animate-fade-up-delay-1 { animation: fadeUp 0.6s ease 0.1s both; }
+.animate-fade-up-delay-2 { animation: fadeUp 0.6s ease 0.2s both; }
+.animate-fade-up-delay-3 { animation: fadeUp 0.6s ease 0.3s both; }
+
+.pulse-ring { animation: pulse-ring 2s infinite; }
+
+/* ── Teal color helper ───────────────────────────── */
+.text-teal  { color: var(--teal); }
+.bg-teal    { background-color: var(--teal); }
+.border-teal { border-color: var(--teal); }
