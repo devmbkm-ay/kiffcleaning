@@ -53,9 +53,9 @@ const TESTIMONIALS = [
 
 const STATS = [
   { numeric: 1200, suffix: '+', display: '1 200+', label: 'Interventions réalisées' },
-  { numeric: null,  suffix: '',  display: '24h/24',     label: 'Disponibilité totale' },
-  { numeric: 98,    suffix: '%', display: '98%',        label: 'Clients satisfaits' },
-  { numeric: null,  suffix: '',  display: '77/92/93/94',label: 'Départements couverts' },
+  { numeric: null, suffix: '', display: '24h/24', label: 'Disponibilité totale' },
+  { numeric: 98, suffix: '%', display: '98%', label: 'Clients satisfaits' },
+  { numeric: null, suffix: '', display: '77/92/93/94', label: 'Départements couverts' },
 ];
 
 const SERVICE_ICONS = [Shield, Truck, Award, CheckCircle2, MapPin];
@@ -75,71 +75,83 @@ export default function HomePage() {
       <main>
         {/* ── HERO ─────────────────────────────────────── */}
         <section
-          className="relative min-h-[92vh] flex items-center px-4 overflow-hidden"
-          style={{ background: 'linear-gradient(180deg, #0d1b2a 0%, #112236 60%, #0d1b2a 100%)' }}
+          className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden"
           aria-labelledby="hero-title"
         >
-          {/* Background grid pattern */}
+          {/* Background image — drop hero-team.jpg in /public */}
+          <Image
+            src="/images/hero-team.png"
+            alt=""
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f1f]/85 via-[#0a0f1f]/70 to-[#0a0f1f]/90" />
+
+          {/* Subtle teal grid */}
           <div
-            className="absolute inset-0 opacity-5"
+            className="absolute inset-0 opacity-[0.04]"
             style={{
               backgroundImage:
-                'linear-gradient(rgba(0,184,148,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(0,184,148,0.3) 1px, transparent 1px)',
+                'linear-gradient(rgba(0,184,148,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,184,148,0.5) 1px, transparent 1px)',
               backgroundSize: '60px 60px',
             }}
           />
 
-          <div className="relative max-w-7xl mx-auto w-full py-24 grid lg:grid-cols-2 gap-16 items-center">
-            {/* Text */}
-            <div>
-              <div className="badge-teal mb-6 animate-fade-up">
-                <CheckCircle2 className="w-3.5 h-3.5" />
-                Intervention urgente disponible maintenant
-              </div>
-
-              <h1
-                id="hero-title"
-                className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white uppercase leading-[1.05] tracking-tight mb-6 animate-fade-up-delay-1"
-              >
-                Nettoyage <span className="text-teal">Extrême</span> en
-                Île-de-France
-              </h1>
-
-              <p className="text-slate-300 text-lg leading-relaxed mb-8 animate-fade-up-delay-2 max-w-xl">
-                Spécialiste du nettoyage d'insalubrité, débarras complet, désinfection
-                biocide et syndrome de Diogène. Intervention rapide, discrète et
-                professionnelle — 24h/24, 7j/7.
-              </p>
-
-              <div className="flex flex-wrap gap-4 animate-fade-up-delay-3">
-                <a
-                  href={`tel:${SITE.phoneRaw}`}
-                  className="btn-primary text-base px-8 py-4 rounded-xl pulse-ring"
-                >
-                  <Phone className="w-4 h-4" />
-                  Urgence 24h/24
-                </a>
-                <Link href="/devis" className="btn-outline text-base px-8 py-4 rounded-xl">
-                  Devis gratuit
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-
-              {/* Trust badges */}
-              <div className="mt-10 flex flex-wrap gap-5 text-sm text-slate-400 animate-fade-up-delay-3">
-                {['Véhicules banalisés', 'Discrétion totale', 'Certifié NF'].map((b) => (
-                  <span key={b} className="flex items-center gap-1.5">
-                    <BadgeCheck className="w-4 h-4 text-teal" />
-                    {b}
-                  </span>
-                ))}
-              </div>
+          {/* Centered content */}
+          <div className="relative max-w-4xl mx-auto w-full py-36 text-center">
+            <div className="badge-teal mb-6 animate-fade-up inline-flex">
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              Intervention 24h/24 • 7j/7
             </div>
 
-            {/* Stats card */}
-            <StatsCounter stats={STATS} />
+            <h1
+              id="hero-title"
+              className="text-5xl md:text-7xl font-extrabold text-white uppercase leading-[1.0] tracking-tight mb-6 animate-fade-up-delay-1"
+            >
+              Nettoyage Extrême<br />
+              <span className="text-teal">Professionnel</span>
+            </h1>
+
+            <p className="text-slate-300 text-lg leading-relaxed mb-8 animate-fade-up-delay-2 max-w-2xl mx-auto">
+              Spécialiste du nettoyage après sinistre, syndrome de Diogène, débarras et
+              désinfection biocide en Île-de-France. Discrétion absolue, conformité totale.
+            </p>
+
+            <div className="flex flex-wrap gap-4 justify-center mb-10 animate-fade-up-delay-3">
+              <a
+                href={`tel:${SITE.phoneRaw}`}
+                className="btn-primary text-base px-8 py-4 rounded-xl pulse-ring"
+              >
+                <Phone className="w-4 h-4" />
+                Appeler Maintenant
+              </a>
+              <Link href="/zones" className="btn-outline text-base px-8 py-4 rounded-xl">
+                Zone d&apos;Intervention
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            <div className="flex flex-wrap gap-6 justify-center text-sm text-slate-400 animate-fade-up-delay-3">
+              {['Certifié Biocide', 'Véhicules Banalisés', 'Devis Gratuit'].map((b) => (
+                <span key={b} className="flex items-center gap-1.5">
+                  <BadgeCheck className="w-4 h-4 text-teal" />
+                  {b}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
+
+        {/* Stats strip below hero */}
+        <div className="bg-navy-800 py-10 px-4">
+          <div className="max-w-3xl mx-auto">
+            <StatsCounter stats={STATS} />
+          </div>
+        </div>
 
         <CertificationStrip />
 
@@ -151,59 +163,59 @@ export default function HomePage() {
         >
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
-            <div className="text-center mb-14">
-              <h2 id="services-title" className="section-title mb-4">NOS SERVICES</h2>
-              <p className="text-slate-400 max-w-2xl mx-auto">
-                Des solutions complètes pour les situations les plus extrêmes, avec une
-                rigueur professionnelle sans compromis.
-              </p>
-            </div>
+              <div className="text-center mb-14">
+                <h2 id="services-title" className="section-title mb-4">NOS SERVICES</h2>
+                <p className="text-slate-400 max-w-2xl mx-auto">
+                  Des solutions complètes pour les situations les plus extrêmes, avec une
+                  rigueur professionnelle sans compromis.
+                </p>
+              </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {SERVICES.slice(0, 3).map((s, i) => {
-                const Icon = SERVICE_ICONS[i];
-                return (
-                  <Link
-                    key={s.slug}
-                    href={`/services/${s.slug}`}
-                    className="card-dark group flex flex-col gap-4"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-teal/10 border border-teal/20 flex items-center justify-center group-hover:bg-teal/20 transition-colors">
-                      <Icon className="w-6 h-6 text-teal" strokeWidth={1.5} />
-                    </div>
-                    <h3 className="text-white font-bold text-lg">{s.name}</h3>
-                    <p className="text-slate-400 text-sm leading-relaxed flex-1">
-                      {s.fullDesc}
-                    </p>
-                    <span className="text-teal text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
-                      En savoir plus <ArrowRight className="w-3.5 h-3.5" />
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                {SERVICES.slice(0, 3).map((s, i) => {
+                  const Icon = SERVICE_ICONS[i];
+                  return (
+                    <Link
+                      key={s.slug}
+                      href={`/services/${s.slug}`}
+                      className="card-dark group flex flex-col gap-4"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-teal/10 border border-teal/20 flex items-center justify-center group-hover:bg-teal/20 transition-colors">
+                        <Icon className="w-6 h-6 text-teal" strokeWidth={1.5} />
+                      </div>
+                      <h3 className="text-white font-bold text-lg">{s.name}</h3>
+                      <p className="text-slate-400 text-sm leading-relaxed flex-1">
+                        {s.fullDesc}
+                      </p>
+                      <span className="text-teal text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        En savoir plus <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
 
-            {/* Remaining services */}
-            <div className="grid md:grid-cols-2 gap-6 mt-6">
-              {SERVICES.slice(3).map((s, i) => {
-                const Icon = SERVICE_ICONS[i + 3];
-                return (
-                  <Link
-                    key={s.slug}
-                    href={`/services/${s.slug}`}
-                    className="card-dark group flex items-start gap-4"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-teal/10 border border-teal/20 flex items-center justify-center shrink-0 group-hover:bg-teal/20 transition-colors">
-                      <Icon className="w-6 h-6 text-teal" strokeWidth={1.5} />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-bold mb-1">{s.name}</h3>
-                      <p className="text-slate-400 text-sm">{s.shortDesc}</p>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
+              {/* Remaining services */}
+              <div className="grid md:grid-cols-2 gap-6 mt-6">
+                {SERVICES.slice(3).map((s, i) => {
+                  const Icon = SERVICE_ICONS[i + 3];
+                  return (
+                    <Link
+                      key={s.slug}
+                      href={`/services/${s.slug}`}
+                      className="card-dark group flex items-start gap-4"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-teal/10 border border-teal/20 flex items-center justify-center shrink-0 group-hover:bg-teal/20 transition-colors">
+                        <Icon className="w-6 h-6 text-teal" strokeWidth={1.5} />
+                      </div>
+                      <div>
+                        <h3 className="text-white font-bold mb-1">{s.name}</h3>
+                        <p className="text-slate-400 text-sm">{s.shortDesc}</p>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
             </ScrollReveal>
           </div>
         </section>
@@ -285,7 +297,7 @@ export default function HomePage() {
             </div>
             <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-navy-700 relative">
               <Image
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+                src="/images/equipements-pro.png"
                 alt="Équipement professionnel de nettoyage Kiff Cleaning Solutions"
                 fill
                 className="object-cover"
@@ -299,30 +311,30 @@ export default function HomePage() {
         <section className="py-24 px-4 bg-navy-900" aria-labelledby="temoignages-title">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
-            <div className="text-center mb-14">
-              <h2 id="temoignages-title" className="section-title mb-4">TÉMOIGNAGES</h2>
-              <p className="text-slate-400">La confiance de nos clients est notre meilleure référence.</p>
-            </div>
+              <div className="text-center mb-14">
+                <h2 id="temoignages-title" className="section-title mb-4">TÉMOIGNAGES</h2>
+                <p className="text-slate-400">La confiance de nos clients est notre meilleure référence.</p>
+              </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {TESTIMONIALS.map((t, i) => (
-                <article key={i} className="card-dark flex flex-col gap-4">
-                  {/* Stars */}
-                  <div className="flex gap-1">
-                    {Array.from({ length: t.stars }).map((_, j) => (
-                      <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  <blockquote className="text-slate-300 text-sm leading-relaxed italic flex-1">
-                    "{t.text}"
-                  </blockquote>
-                  <footer>
-                    <div className="text-white font-semibold text-sm">{t.name}</div>
-                    <div className="text-slate-500 text-xs">{t.role}</div>
-                  </footer>
-                </article>
-              ))}
-            </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                {TESTIMONIALS.map((t, i) => (
+                  <article key={i} className="card-dark flex flex-col gap-4">
+                    {/* Stars */}
+                    <div className="flex gap-1">
+                      {Array.from({ length: t.stars }).map((_, j) => (
+                        <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                      ))}
+                    </div>
+                    <blockquote className="text-slate-300 text-sm leading-relaxed italic flex-1">
+                      "{t.text}"
+                    </blockquote>
+                    <footer>
+                      <div className="text-white font-semibold text-sm">{t.name}</div>
+                      <div className="text-slate-500 text-xs">{t.role}</div>
+                    </footer>
+                  </article>
+                ))}
+              </div>
             </ScrollReveal>
           </div>
         </section>

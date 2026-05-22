@@ -9,7 +9,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-navy-900/95 backdrop-blur border-b border-white/5">
+    <header className="sticky top-0 z-50 bg-white shadow-sm">
       <nav
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
         aria-label="Navigation principale"
@@ -18,7 +18,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2.5 shrink-0">
           <Shield className="w-6 h-6 text-teal" strokeWidth={1.5} aria-hidden />
           <div>
-            <span className="text-white font-extrabold text-base tracking-wide uppercase leading-none">
+            <span className="text-[#0f2044] font-extrabold text-base tracking-wide uppercase leading-none">
               KIFF CLEANING
             </span>
             <span className="block text-[10px] font-semibold tracking-[0.2em] text-teal uppercase leading-none mt-0.5">
@@ -45,7 +45,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-slate-300 hover:text-white p-2"
+          className="md:hidden text-[#0f2044] hover:text-teal p-2"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -55,7 +55,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-navy-800 border-t border-white/5 px-4 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-white border-t border-slate-100 px-4 py-4 flex flex-col gap-4">
           <Link href="/" className="nav-link" onClick={() => setOpen(false)}>Accueil</Link>
           <Link href="/zones" className="nav-link" onClick={() => setOpen(false)}>Zone d'Intervention</Link>
           <Link href="/services" className="nav-link" onClick={() => setOpen(false)}>Services</Link>

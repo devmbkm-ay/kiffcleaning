@@ -61,7 +61,7 @@ body {
   }
 
   .nav-link {
-    @apply text-sm font-medium text-slate-300 hover:text-teal transition-colors duration-150;
+    @apply text-sm font-medium text-[#0f2044] hover:text-teal transition-colors duration-150;
   }
 
   .badge-teal {
