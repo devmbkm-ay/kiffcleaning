@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Calendar, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -32,8 +33,17 @@ export default function BlogPage() {
                 <Link
                   key={a.slug}
                   href={`/blog/${a.slug}`}
-                  className="card-dark group flex flex-col gap-4"
+                  className="card-dark group flex flex-col gap-4 overflow-hidden"
                 >
+                  <div className="h-44 rounded-lg overflow-hidden -m-6 mb-0 relative">
+                    <Image
+                      src={a.image}
+                      alt={a.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
                   <div className="badge-teal self-start">{a.category}</div>
                   <h2 className="text-white font-bold leading-snug group-hover:text-teal transition-colors flex-1">
                     {a.title}

@@ -5,6 +5,7 @@ export const ARTICLES = [
     excerpt: 'Le syndrome de Diogène est un trouble complexe qui nécessite une approche humaine autant que technique. Découvrez comment nos équipes gèrent ces situations délicates.',
     date: '2025-04-15',
     category: 'Syndrome de Diogène',
+    image: 'https://images.unsplash.com/photo-1584467735867-4297ae2ebcee?w=800&q=80',
   },
   {
     slug: 'nettoyage-apres-deces-ce-quil-faut-savoir',
@@ -12,6 +13,7 @@ export const ARTICLES = [
     excerpt: 'Après un décès, le nettoyage du logement est une étape souvent oubliée mais essentielle. Réglementation, protocoles, délais : guide complet.',
     date: '2025-03-28',
     category: 'Nettoyage Post-Mortem',
+    image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=800&q=80',
   },
   {
     slug: 'desinfection-biocide-normes-protocoles',
@@ -19,6 +21,7 @@ export const ARTICLES = [
     excerpt: 'La désinfection biocide est encadrée par des normes strictes. Comprendre ces exigences vous permet de choisir un prestataire compétent et certifié.',
     date: '2025-03-10',
     category: 'Désinfection Biocide',
+    image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80',
   },
   {
     slug: 'debarras-logement-insalubre-ile-de-france',
@@ -26,6 +29,7 @@ export const ARTICLES = [
     excerpt: 'Propriétaire ou locataire face à un logement insalubre ? Voici les étapes légales, pratiques et les coûts à prévoir pour un débarras complet.',
     date: '2025-02-20',
     category: 'Débarras',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
   },
   {
     slug: 'nettoyage-extreme-courbevoie-hauts-de-seine',
@@ -33,6 +37,7 @@ export const ARTICLES = [
     excerpt: 'Kiff Cleaning Solutions intervient rapidement à Courbevoie, Neuilly, Levallois et dans tout le 92 pour les situations d\'urgence d\'insalubrité.',
     date: '2025-02-05',
     category: 'Zones',
+    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80',
   },
   {
     slug: 'choisir-entreprise-nettoyage-insalubrite',
@@ -40,5 +45,6 @@ export const ARTICLES = [
     excerpt: 'Certifications, assurances, protocoles, discrétion : les 7 critères essentiels pour sélectionner un prestataire fiable pour votre situation.',
     date: '2025-01-18',
     category: 'Conseils',
+    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80',
   },
 ];

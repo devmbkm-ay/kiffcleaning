@@ -3,11 +3,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   Phone, Shield, Truck, Award, CheckCircle2, Star,
-  ArrowRight, MapPin, Clock, BadgeCheck,
+  ArrowRight, MapPin, BadgeCheck,
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CtaBanner from '@/components/CtaBanner';
+import StatsCounter from '@/components/StatsCounter';
+import CertificationStrip from '@/components/CertificationStrip';
+import BeforeAfterSlider from '@/components/BeforeAfterSlider';
+import ScrollReveal from '@/components/ScrollReveal';
+import StickyMobileCTA from '@/components/StickyMobileCTA';
 import { SITE, SERVICES, ZONES, getFAQSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -47,10 +52,10 @@ const TESTIMONIALS = [
 ];
 
 const STATS = [
-  { value: '1 200+', label: 'Interventions réalisées' },
-  { value: '24h/24', label: 'Disponibilité totale' },
-  { value: '98%', label: 'Clients satisfaits' },
-  { value: '77/92/93/94', label: 'Départements couverts' },
+  { numeric: 1200, suffix: '+', display: '1 200+', label: 'Interventions réalisées' },
+  { numeric: null,  suffix: '',  display: '24h/24',     label: 'Disponibilité totale' },
+  { numeric: 98,    suffix: '%', display: '98%',        label: 'Clients satisfaits' },
+  { numeric: null,  suffix: '',  display: '77/92/93/94',label: 'Départements couverts' },
 ];
 
 const SERVICE_ICONS = [Shield, Truck, Award, CheckCircle2, MapPin];
@@ -132,20 +137,11 @@ export default function HomePage() {
             </div>
 
             {/* Stats card */}
-            <div className="grid grid-cols-2 gap-4">
-              {STATS.map((s, i) => (
-                <div
-                  key={i}
-                  className="card-dark text-center py-8"
-                  style={{ animationDelay: `${i * 0.1}s` }}
-                >
-                  <div className="text-3xl font-extrabold text-teal mb-1">{s.value}</div>
-                  <div className="text-slate-400 text-sm">{s.label}</div>
-                </div>
-              ))}
-            </div>
+            <StatsCounter stats={STATS} />
           </div>
         </section>
+
+        <CertificationStrip />
 
         {/* ── SERVICES ─────────────────────────────────── */}
         <section
@@ -154,6 +150,7 @@ export default function HomePage() {
           aria-labelledby="services-title"
         >
           <div className="max-w-7xl mx-auto">
+            <ScrollReveal>
             <div className="text-center mb-14">
               <h2 id="services-title" className="section-title mb-4">NOS SERVICES</h2>
               <p className="text-slate-400 max-w-2xl mx-auto">
@@ -207,6 +204,7 @@ export default function HomePage() {
                 );
               })}
             </div>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -247,6 +245,26 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ── AVANT / APRÈS ────────────────────────────── */}
+        <section className="py-24 px-4 bg-navy-800" aria-labelledby="before-after-title">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <div className="text-center mb-10">
+                <h2 id="before-after-title" className="section-title mb-4">RÉSULTATS CONCRETS</h2>
+                <p className="text-slate-400 max-w-xl mx-auto">
+                  Glissez pour découvrir la transformation réalisée par nos équipes lors d&apos;une intervention réelle.
+                </p>
+              </div>
+              <BeforeAfterSlider
+                before="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1200&q=80"
+                after="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
+                beforeAlt="Logement insalubre avant intervention"
+                afterAlt="Logement après intervention complète par Kiff Cleaning Solutions"
+              />
+            </ScrollReveal>
+          </div>
+        </section>
+
         {/* ── ÉQUIPEMENT ───────────────────────────────── */}
         <section className="py-24 px-4 bg-navy-800" aria-labelledby="equipement-title">
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
@@ -280,6 +298,7 @@ export default function HomePage() {
         {/* ── TÉMOIGNAGES ──────────────────────────────── */}
         <section className="py-24 px-4 bg-navy-900" aria-labelledby="temoignages-title">
           <div className="max-w-7xl mx-auto">
+            <ScrollReveal>
             <div className="text-center mb-14">
               <h2 id="temoignages-title" className="section-title mb-4">TÉMOIGNAGES</h2>
               <p className="text-slate-400">La confiance de nos clients est notre meilleure référence.</p>
@@ -304,6 +323,7 @@ export default function HomePage() {
                 </article>
               ))}
             </div>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -372,6 +392,7 @@ export default function HomePage() {
       </main>
 
       <Footer />
+      <StickyMobileCTA />
     </>
   );
 }
