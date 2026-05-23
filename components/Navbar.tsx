@@ -41,6 +41,7 @@ export default function Navbar() {
           <Link href="/zones" className="nav-link">Zone d'Intervention</Link>
           <Link href="/services" className="nav-link">Services</Link>
           <Link href="/blog" className="nav-link">Blog</Link>
+          <Link href="/contact" className="nav-link">Contact</Link>
           <a
             href={`tel:${SITE.phoneRaw}`}
             className="btn-primary pulse-ring"
@@ -68,6 +69,7 @@ export default function Navbar() {
           <Link href="/zones" className="nav-link" onClick={() => setOpen(false)}>Zone d'Intervention</Link>
           <Link href="/services" className="nav-link" onClick={() => setOpen(false)}>Services</Link>
           <Link href="/blog" className="nav-link" onClick={() => setOpen(false)}>Blog</Link>
+          <Link href="/contact" className="nav-link" onClick={() => setOpen(false)}>Contact</Link>
           <a href={`tel:${SITE.phoneRaw}`} className="btn-primary justify-center">
             <Phone className="w-4 h-4" />
             Urgence 24h/24

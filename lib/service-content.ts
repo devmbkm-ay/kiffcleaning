@@ -6,6 +6,8 @@ export type ServiceStep = { step: number; title: string; desc: string };
 export type ServiceContent = {
   whatIsTitle: string;
   whatIsBody: string;
+  image: string;
+  imageAlt: string;
   protocolTitle: string;
   steps: ServiceStep[];
   whyUs: string[];
@@ -15,6 +17,8 @@ export type ServiceContent = {
 export const SERVICE_CONTENT: Record<string, ServiceContent> = {
   'nettoyage-extreme': {
     whatIsTitle: "Qu'est-ce que le nettoyage extrême ?",
+    image: '/images/services/nettoyage-extreme.jpg',
+    imageAlt: 'Équipe Kiff Cleaning en intervention de nettoyage extrême avec équipements de protection',
     whatIsBody: `Le nettoyage extrême désigne l'ensemble des opérations de remise en état d'un logement ou d'un local présentant un niveau de dégradation sanitaire sévère, inaccessible par des moyens conventionnels. Il s'agit de situations où l'accumulation de déchets, la présence de nuisibles (rongeurs, cafards, punaises de lit), les moisissures extensives ou les odeurs persistantes rendent le logement inhabitable.
 
 Ces interventions exigent des équipements de protection individuelle de niveau 3 (combinaisons intégrales, masques FFP3, gants nitrile), des produits biocides homologués et un protocole strict défini par les normes sanitaires françaises. Kiff Cleaning Solutions est formé et équipé pour intervenir dans les cas les plus extrêmes, tout en respectant les personnes concernées et leurs proches.`,
@@ -46,6 +50,8 @@ Ces interventions exigent des équipements de protection individuelle de niveau 
 
   'debarras-complet': {
     whatIsTitle: "Qu'est-ce qu'un débarras complet ?",
+    image: '/images/services/debarras-complet.jpg',
+    imageAlt: 'Intervention de débarras complet par Kiff Cleaning Solutions en Île-de-France',
     whatIsBody: `Un débarras complet est l'opération de vidage intégral d'un logement, d'une cave, d'un grenier ou d'un local commercial. Il intervient généralement dans le cadre d'une succession, d'un déménagement, d'une saisie, d'une expulsion ou de la prise en charge d'un logement insalubre.
 
 Contrairement à une simple benne, le débarras professionnel comprend le tri des objets (récupération, don, recyclage, déchets spéciaux), l'évacuation réglementaire et, selon les besoins, un nettoyage de fin de chantier. Kiff Cleaning Solutions assure l'ensemble de ces étapes avec une traçabilité complète pour les bailleurs sociaux, notaires et particuliers.`,
@@ -76,6 +82,8 @@ Contrairement à une simple benne, le débarras professionnel comprend le tri de
 
   'desinfection-biocide': {
     whatIsTitle: "Qu'est-ce que la désinfection biocide ?",
+    image: '/images/services/desinfection-biocide.jpg',
+    imageAlt: 'Application de produits biocides certifiés par un technicien Kiff Cleaning',
     whatIsBody: `La désinfection biocide est un traitement chimique visant à éliminer ou neutraliser les micro-organismes pathogènes (bactéries, virus, champignons, spores) présents sur des surfaces, dans l'air ou dans les matériaux. En France, les produits biocides sont réglementés par le règlement européen UE n°528/2012 et nécessitent une autorisation de mise sur le marché (AMM).
 
 Les interventions de désinfection biocide sont requises après un décès, une infestation, une contamination microbiologique (COVID, légionelle, salmonelle), ou dans le cadre d'une remise en état après syndrome de Diogène. Kiff Cleaning Solutions utilise exclusivement des produits certifiés ayant obtenu leur AMM, garantissant l'efficacité virucide (NF EN 14476), bactéricide (NF EN 1276) et fongicide (NF EN 1650).`,
@@ -107,6 +115,8 @@ Les interventions de désinfection biocide sont requises après un décès, une 
 
   'nettoyage-post-mortem': {
     whatIsTitle: "Qu'est-ce que le nettoyage post-mortem ?",
+    image: '/images/services/nettoyage-post-mortem.jpg',
+    imageAlt: 'Intervention discrète de nettoyage post-mortem par Kiff Cleaning Solutions',
     whatIsBody: `Le nettoyage post-mortem désigne l'intervention de remise en état d'un logement après un décès, notamment lorsque le corps n'a pas été découvert rapidement (décès isolé), après une mort violente (accident, suicide, homicide) ou en cas de décomposition avancée.
 
 Ces situations présentent des risques sanitaires sérieux : fluides biologiques, agents pathogènes (hépatite B et C, VIH, bactéries anaérobies), odeurs de décomposition persistantes. En France, cette activité est réglementée par l'article L. 1311-1 du Code de la santé publique. Kiff Cleaning Solutions intervient avec discrétion, respect et le protocole technique requis, dans le plein respect des familles endeuillées.`,
@@ -138,6 +148,8 @@ Ces situations présentent des risques sanitaires sérieux : fluides biologiques
 
   'syndrome-de-diogene': {
     whatIsTitle: "Qu'est-ce que le syndrome de Diogène ?",
+    image: '/images/services/syndrome-de-diogene.jpg',
+    imageAlt: 'Prise en charge bienveillante d\'un logement en syndrome de Diogène par Kiff Cleaning',
     whatIsBody: `Le syndrome de Diogène — également appelé syndrome de Plyushkin ou trouble de l'accumulation compulsive sévère — est un trouble du comportement caractérisé par une accumulation pathologique d'objets et de déchets, une négligence extrême de l'hygiène personnelle et du logement, et un isolement social progressif. Il touche majoritairement les personnes âgées vivant seules, mais peut concerner tous les âges.
 
 Reconnu dans le DSM-5 sous la catégorie des troubles obsessionnels compulsifs (TOC), il génère des risques sanitaires graves pour la personne concernée et son environnement : infestations de nuisibles, contamination microbiologique, risques d'incendie, insalubrité chronique. La prise en charge nécessite une double compétence : technique (nettoyage, désinfection) et humaine (relation avec la personne, coordination avec les services sociaux).`,

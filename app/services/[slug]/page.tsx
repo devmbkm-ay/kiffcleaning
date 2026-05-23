@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import { Phone, CheckCircle2, ArrowRight, Shield, ChevronRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -123,6 +124,18 @@ export default async function ServicePage({ params }: Props) {
                 ))}
               </div>
             </section>
+
+            {/* ── IMAGE BANNER ─────────────────────────── */}
+            <div className="relative h-72 md:h-96 overflow-hidden">
+              <Image
+                src={content.image}
+                alt={content.imageAlt}
+                fill
+                sizes="100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-navy-900/50" />
+            </div>
 
             {/* ── PROTOCOL ─────────────────────────────── */}
             <section className="py-20 px-4 bg-navy-800">
