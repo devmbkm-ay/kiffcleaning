@@ -58,17 +58,17 @@ export default function StatsCounter({ stats }: { stats: Stat[] }) {
   }, []);
 
   return (
-    <div ref={ref} className="grid grid-cols-2 gap-4">
+    <div ref={ref} className="grid grid-cols-2 gap-3 sm:gap-4">
       {stats.map((s, i) => (
-        <div key={i} className="card-dark text-center py-8">
-          <div className="text-3xl font-extrabold text-teal mb-1">
+        <div key={i} className="card-dark text-center py-5 sm:py-8 px-2">
+          <div className="text-xl sm:text-3xl font-extrabold text-teal mb-1 leading-tight break-words">
             {s.numeric !== null ? (
               <CountUp target={s.numeric} suffix={s.suffix} started={started} />
             ) : (
               s.display
             )}
           </div>
-          <div className="text-slate-400 text-sm">{s.label}</div>
+          <div className="text-slate-400 text-xs sm:text-sm leading-snug">{s.label}</div>
         </div>
       ))}
     </div>
