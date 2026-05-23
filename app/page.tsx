@@ -12,7 +12,6 @@ import StatsCounter from '@/components/StatsCounter';
 import CertificationStrip from '@/components/CertificationStrip';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import ScrollReveal from '@/components/ScrollReveal';
-import StickyMobileCTA from '@/components/StickyMobileCTA';
 import { SITE, SERVICES, ZONES, getFAQSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -102,7 +101,7 @@ export default function HomePage() {
           />
 
           {/* Centered content */}
-          <div className="relative max-w-4xl mx-auto w-full py-36 text-center">
+          <div className="relative max-w-4xl mx-auto w-full py-20 md:py-36 text-center">
             <div className="badge-teal mb-6 animate-fade-up inline-flex">
               <CheckCircle2 className="w-3.5 h-3.5" />
               Intervention 24h/24 • 7j/7
@@ -110,7 +109,7 @@ export default function HomePage() {
 
             <h1
               id="hero-title"
-              className="text-5xl md:text-7xl font-extrabold text-white uppercase leading-[1.0] tracking-tight mb-6 animate-fade-up-delay-1"
+              className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white uppercase leading-[1.0] tracking-tight mb-6 animate-fade-up-delay-1"
             >
               Nettoyage Extrême<br />
               <span className="text-teal">Professionnel</span>
@@ -158,12 +157,12 @@ export default function HomePage() {
         {/* ── SERVICES ─────────────────────────────────── */}
         <section
           id="services"
-          className="py-24 px-4 bg-navy-800"
+          className="py-14 md:py-24 px-4 bg-navy-800"
           aria-labelledby="services-title"
         >
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
-              <div className="text-center mb-14">
+              <div className="text-center mb-8 md:mb-14">
                 <h2 id="services-title" className="section-title mb-4">NOS SERVICES</h2>
                 <p className="text-slate-400 max-w-2xl mx-auto">
                   Des solutions complètes pour les situations les plus extrêmes, avec une
@@ -221,8 +220,8 @@ export default function HomePage() {
         </section>
 
         {/* ── GARANTIES ────────────────────────────────── */}
-        <section className="py-24 px-4 bg-navy-900" aria-labelledby="garanties-title">
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <section className="py-14 md:py-24 px-4 bg-navy-900" aria-labelledby="garanties-title">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Image */}
             <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-navy-700 relative">
               <Image
@@ -258,7 +257,7 @@ export default function HomePage() {
         </section>
 
         {/* ── AVANT / APRÈS ────────────────────────────── */}
-        <section className="py-24 px-4 bg-navy-800" aria-labelledby="before-after-title">
+        <section className="py-14 md:py-24 px-4 bg-navy-800" aria-labelledby="before-after-title">
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <div className="text-center mb-10">
@@ -278,8 +277,8 @@ export default function HomePage() {
         </section>
 
         {/* ── ÉQUIPEMENT ───────────────────────────────── */}
-        <section className="py-24 px-4 bg-navy-800" aria-labelledby="equipement-title">
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <section className="py-14 md:py-24 px-4 bg-navy-800" aria-labelledby="equipement-title">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div>
               <h2 id="equipement-title" className="section-title mb-6">
                 ÉQUIPEMENT<br />PROFESSIONNEL
@@ -308,10 +307,10 @@ export default function HomePage() {
         </section>
 
         {/* ── TÉMOIGNAGES ──────────────────────────────── */}
-        <section className="py-24 px-4 bg-navy-900" aria-labelledby="temoignages-title">
+        <section className="py-14 md:py-24 px-4 bg-navy-900" aria-labelledby="temoignages-title">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
-              <div className="text-center mb-14">
+              <div className="text-center mb-8 md:mb-14">
                 <h2 id="temoignages-title" className="section-title mb-4">TÉMOIGNAGES</h2>
                 <p className="text-slate-400">La confiance de nos clients est notre meilleure référence.</p>
               </div>
@@ -340,9 +339,9 @@ export default function HomePage() {
         </section>
 
         {/* ── ZONES D'INTERVENTION ─────────────────────── */}
-        <section className="py-24 px-4 bg-navy-800" aria-labelledby="zones-title">
+        <section className="py-14 md:py-24 px-4 bg-navy-800" aria-labelledby="zones-title">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8 md:mb-14">
               <h2 id="zones-title" className="section-title mb-4">ZONES D'INTERVENTION</h2>
               <p className="text-slate-400 max-w-2xl mx-auto">
                 Nous intervenons dans toute l'Île-de-France. Sélectionnez votre ville
@@ -372,9 +371,9 @@ export default function HomePage() {
         </section>
 
         {/* ── FAQ ──────────────────────────────────────── */}
-        <section className="py-24 px-4 bg-navy-900" aria-labelledby="faq-title">
+        <section className="py-14 md:py-24 px-4 bg-navy-900" aria-labelledby="faq-title">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8 md:mb-14">
               <h2 id="faq-title" className="section-title mb-4">QUESTIONS FRÉQUENTES</h2>
               <p className="text-slate-400">
                 Retrouvez les réponses aux questions les plus courantes sur nos services.
@@ -404,7 +403,6 @@ export default function HomePage() {
       </main>
 
       <Footer />
-      <StickyMobileCTA />
     </>
   );
 }

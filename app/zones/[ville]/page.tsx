@@ -80,7 +80,7 @@ export default async function ZonePage({ params }: Props) {
       <main>
         {/* Hero zone */}
         <section
-          className="py-24 px-4 relative overflow-hidden"
+          className="py-14 md:py-24 px-4 relative overflow-hidden"
           style={{ background: 'linear-gradient(180deg, #0d1b2a 0%, #112236 100%)' }}
         >
           <div
@@ -118,12 +118,12 @@ export default async function ZonePage({ params }: Props) {
         </section>
 
         {/* Services pour cette zone */}
-        <section className="py-20 px-4 bg-navy-800">
+        <section className="py-12 md:py-20 px-4 bg-navy-800">
           <div className="max-w-7xl mx-auto">
             <h2 className="section-title text-center mb-4">
               NOS SERVICES À {zone.name.toUpperCase()}
             </h2>
-            <p className="text-slate-400 text-center mb-12 max-w-xl mx-auto">
+            <p className="text-slate-400 text-center mb-8 md:mb-12 max-w-xl mx-auto">
               Toutes nos prestations sont disponibles à {zone.name} avec une réponse
               rapide et des équipes locales.
             </p>
@@ -150,9 +150,9 @@ export default async function ZonePage({ params }: Props) {
         </section>
 
         {/* Pourquoi nous choisir */}
-        <section className="py-20 px-4 bg-navy-900">
+        <section className="py-12 md:py-20 px-4 bg-navy-900">
           <div className="max-w-4xl mx-auto">
-            <h2 className="section-title text-center mb-12">
+            <h2 className="section-title text-center mb-8 md:mb-12">
               POURQUOI NOUS CHOISIR À {zone.name.toUpperCase()} ?
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
@@ -190,7 +190,7 @@ export default async function ZonePage({ params }: Props) {
 
         {/* Villes proches */}
         {nearbyZones.length > 0 && (
-          <section className="py-16 px-4 bg-navy-800">
+          <section className="py-10 md:py-16 px-4 bg-navy-800">
             <div className="max-w-7xl mx-auto">
               <h2 className="section-title text-center mb-8">
                 NOUS INTERVENONS AUSSI PRÈS DE {zone.name.toUpperCase()}

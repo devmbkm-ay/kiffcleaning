@@ -89,7 +89,7 @@ export default function ContactPage() {
 
         {/* ── HERO ─────────────────────────────────────── */}
         <section
-          className="py-24 px-4"
+          className="py-14 md:py-24 px-4"
           style={{ background: 'linear-gradient(180deg, #0d1b2a 0%, #112236 100%)' }}
         >
           <div className="max-w-4xl mx-auto text-center">
@@ -106,7 +106,7 @@ export default function ContactPage() {
         </section>
 
         {/* ── CONTACT METHODS ──────────────────────────── */}
-        <section className="py-20 px-4 bg-navy-900">
+        <section className="py-12 md:py-20 px-4 bg-navy-900">
           <div className="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {CONTACT_METHODS.map(({ icon: Icon, label, value, href, note, cta, highlight }) => (
               <div
@@ -144,8 +144,8 @@ export default function ContactPage() {
         </section>
 
         {/* ── FORM + URGENCY ───────────────────────────── */}
-        <section className="py-20 px-4 bg-navy-800">
-          <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
+        <section className="py-12 md:py-20 px-4 bg-navy-800">
+          <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
 
             {/* Form */}
             <div className="card-dark">

@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <nav
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between"
         aria-label="Navigation principale"
       >
         {/* Logo */}
@@ -22,7 +22,7 @@ export default function Navbar() {
             alt="Kiff Cleaning Solutions"
             width={64}
             height={64}
-            className="object-contain"
+            className="object-contain w-10 h-10 sm:w-14 sm:h-14"
             priority
           />
           <div>

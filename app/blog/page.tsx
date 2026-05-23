@@ -19,9 +19,9 @@ export default function BlogPage() {
     <>
       <Navbar />
       <main>
-        <section className="py-24 px-4 bg-navy-900">
+        <section className="py-14 md:py-24 px-4 bg-navy-900">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8 md:mb-14">
               <h1 className="section-title mb-4">BLOG & CONSEILS</h1>
               <p className="text-slate-400 max-w-2xl mx-auto">
                 Guides pratiques, actualités et conseils sur le nettoyage extrême,

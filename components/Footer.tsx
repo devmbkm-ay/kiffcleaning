@@ -5,7 +5,7 @@ import { SITE, SERVICES } from '@/lib/seo';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a1520] border-t border-white/5">
+    <footer className="bg-[#0a1520] border-t border-white/5 pb-20 md:pb-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
 
         {/* Brand */}

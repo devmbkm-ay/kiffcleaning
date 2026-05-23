@@ -69,7 +69,7 @@ export default async function ArticlePage({ params }: Props) {
       />
       <Navbar />
       <main>
-        <section className="py-24 px-4 bg-navy-900">
+        <section className="py-14 md:py-24 px-4 bg-navy-900">
           <div className="max-w-3xl mx-auto">
             <Link href="/blog" className="inline-flex items-center gap-2 text-slate-400 text-sm hover:text-teal mb-8 transition-colors">
               <ArrowLeft className="w-4 h-4" /> Retour au blog

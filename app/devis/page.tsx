@@ -16,10 +16,10 @@ export default function DevisPage() {
       <Navbar />
       <main className="min-h-screen">
         <section
-          className="py-24 px-4"
+          className="py-14 md:py-24 px-4"
           style={{ background: 'linear-gradient(180deg, #0d1b2a 0%, #112236 100%)' }}
         >
-          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             {/* Left */}
             <div>
               <h1 className="section-title mb-4">DEVIS GRATUIT</h1>
