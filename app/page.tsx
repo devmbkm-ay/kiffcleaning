@@ -296,7 +296,7 @@ export default function HomePage() {
             </div>
             <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-navy-700 relative">
               <Image
-                src="/images/equipements-pro.png"
+                src="/images/services/optimized/equipements-pro.webp"
                 alt="Équipement professionnel de nettoyage Kiff Cleaning Solutions"
                 fill
                 className="object-cover"
