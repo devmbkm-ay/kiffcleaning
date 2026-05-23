@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Phone, Shield, Menu, X } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { SITE } from '@/lib/seo';
 
@@ -11,17 +12,24 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <nav
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
         aria-label="Navigation principale"
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          <Shield className="w-6 h-6 text-teal" strokeWidth={1.5} aria-hidden />
+        <Link href="/" className="flex items-center gap-3 shrink-0">
+          <Image
+            src="/images/logo.png"
+            alt="Kiff Cleaning Solutions"
+            width={64}
+            height={64}
+            className="object-contain"
+            priority
+          />
           <div>
-            <span className="text-[#0f2044] font-extrabold text-base tracking-wide uppercase leading-none">
+            <span className="text-[#0f2044] font-extrabold text-lg tracking-wide uppercase leading-none">
               KIFF CLEANING
             </span>
-            <span className="block text-[10px] font-semibold tracking-[0.2em] text-teal uppercase leading-none mt-0.5">
+            <span className="block text-[11px] font-semibold tracking-[0.2em] text-teal uppercase leading-none mt-0.5">
               SOLUTIONS
             </span>
           </div>

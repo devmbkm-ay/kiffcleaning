@@ -36,6 +36,10 @@ export const metadata: Metadata = {
     title: `${SITE.name} — Nettoyage Extrême`,
     description: SITE.description,
   },
+  icons: {
+    icon: '/images/favicon.png',
+    apple: '/images/favicon.png',
+  },
   robots: {
     index: true,
     follow: true,

@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Shield, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import Image from 'next/image';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { SITE, SERVICES } from '@/lib/seo';
 
 export default function Footer() {
@@ -10,7 +11,13 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-2.5 mb-4">
-            <Shield className="w-5 h-5 text-teal" strokeWidth={1.5} />
+            <Image
+              src="/images/logo.png"
+              alt="Kiff Cleaning Solutions"
+              width={32}
+              height={32}
+              className="object-contain"
+            />
             <span className="text-white font-extrabold text-sm tracking-widest uppercase">
               KIFF CLEANING
             </span>
