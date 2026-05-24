@@ -30,12 +30,13 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: `${SITE.name} — Nettoyage Extrême Île-de-France`,
     description: SITE.description,
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: SITE.name }],
+    images: [{ url: '/images/og-image.svg', width: 1200, height: 630, alt: SITE.name }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${SITE.name} — Nettoyage Extrême`,
     description: SITE.description,
+    images: ['/images/og-image.svg'],
   },
   icons: {
     icon: '/images/favicon.png',

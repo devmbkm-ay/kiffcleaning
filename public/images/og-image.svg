@@ -1,0 +1,90 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="40" x2="1080" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08111D"/>
+      <stop offset="0.55" stop-color="#0D1B2A"/>
+      <stop offset="1" stop-color="#10253B"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="180" y1="110" x2="980" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#39D7B3" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#39D7B3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" rx="0" fill="url(#bg)"/>
+  <circle cx="980" cy="90" r="220" fill="url(#accent)"/>
+  <g opacity="0.16" stroke="white">
+    <path d="M0 74.5H1200"/>
+    <path d="M0 149.5H1200"/>
+    <path d="M0 224.5H1200"/>
+    <path d="M0 299.5H1200"/>
+    <path d="M0 374.5H1200"/>
+    <path d="M0 449.5H1200"/>
+    <path d="M0 524.5H1200"/>
+    <path d="M0 599.5H1200"/>
+    <path d="M74.5 0V630"/>
+    <path d="M149.5 0V630"/>
+    <path d="M224.5 0V630"/>
+    <path d="M299.5 0V630"/>
+    <path d="M374.5 0V630"/>
+    <path d="M449.5 0V630"/>
+    <path d="M524.5 0V630"/>
+    <path d="M599.5 0V630"/>
+    <path d="M674.5 0V630"/>
+    <path d="M749.5 0V630"/>
+    <path d="M824.5 0V630"/>
+    <path d="M899.5 0V630"/>
+    <path d="M974.5 0V630"/>
+    <path d="M1049.5 0V630"/>
+    <path d="M1124.5 0V630"/>
+  </g>
+
+  <rect x="58" y="58" width="268" height="46" rx="23" fill="#0F2234" stroke="#39D7B3" stroke-opacity="0.38"/>
+  <text x="84" y="88" fill="#71E6CB" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">
+    Intervention 24h/24 • 7j/7
+  </text>
+
+  <text x="58" y="196" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="74" font-weight="800">
+    Nettoyage Extrême
+  </text>
+  <text x="58" y="274" fill="#39D7B3" font-family="Arial, Helvetica, sans-serif" font-size="74" font-weight="800">
+    Île-de-France
+  </text>
+
+  <text x="58" y="356" fill="#DCE7F3" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="500">
+    Débarras complet, syndrome de Diogène, post-mortem
+  </text>
+  <text x="58" y="396" fill="#DCE7F3" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="500">
+    et désinfection biocide avec équipes discrètes,
+  </text>
+  <text x="58" y="436" fill="#DCE7F3" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="500">
+    devis gratuit et réponse rapide.
+  </text>
+
+  <rect x="58" y="510" width="214" height="42" rx="21" fill="#132738" stroke="white" stroke-opacity="0.14"/>
+  <rect x="286" y="510" width="178" height="42" rx="21" fill="#132738" stroke="white" stroke-opacity="0.14"/>
+  <rect x="478" y="510" width="194" height="42" rx="21" fill="#132738" stroke="white" stroke-opacity="0.14"/>
+  <text x="84" y="538" fill="#E2E8F0" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600">
+    Véhicules banalisés
+  </text>
+  <text x="322" y="538" fill="#E2E8F0" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600">
+    Devis gratuit
+  </text>
+  <text x="512" y="538" fill="#E2E8F0" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600">
+    Réponse rapide
+  </text>
+
+  <text x="58" y="590" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">
+    Kiff Cleaning Solutions
+  </text>
+  <text x="58" y="616" fill="#B6C3D0" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="500">
+    Mareuil-lès-Meaux • Île-de-France
+  </text>
+
+  <text x="957" y="560" text-anchor="end" fill="#B6C3D0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500">
+    Contact direct
+  </text>
+  <text x="1142" y="602" text-anchor="end" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="800">
+    07 70 10 83 39
+  </text>
+</svg>
