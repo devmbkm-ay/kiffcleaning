@@ -87,6 +87,15 @@ export const SERVICES = [
 
 // JSON-LD Schema.org — LocalBusiness
 export function getLocalBusinessSchema() {
+  const address = {
+    '@type': 'PostalAddress',
+    addressLocality: SITE.address.city,
+    postalCode: SITE.address.postalCode,
+    addressRegion: SITE.address.region,
+    addressCountry: SITE.address.country,
+    ...(SITE.address.street ? { streetAddress: SITE.address.street } : {}),
+  };
+
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -96,13 +105,7 @@ export function getLocalBusinessSchema() {
     url: SITE.url,
     telephone: SITE.phoneRaw,
     email: SITE.email,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: SITE.address.city,
-      postalCode: SITE.address.postalCode,
-      addressRegion: SITE.address.region,
-      addressCountry: SITE.address.country,
-    },
+    address,
     geo: {
       '@type': 'GeoCoordinates',
       latitude: SITE.geo.lat,
@@ -132,11 +135,6 @@ export function getLocalBusinessSchema() {
           url: `${SITE.url}/services/${s.slug}`,
         },
       })),
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '47',
     },
     priceRange: '€€',
   };
