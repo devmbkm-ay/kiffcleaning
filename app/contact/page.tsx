@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, Clock, ArrowRight, MessageSquare } from 'lucide-re
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CtaBanner from '@/components/CtaBanner';
+import LeadForm from '@/components/LeadForm';
 import { SITE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -154,65 +155,7 @@ export default function ContactPage() {
                 Pour les urgences, appelez directement au{' '}
                 <a href={`tel:${SITE.phoneRaw}`} className="text-teal hover:underline">{SITE.phone}</a>.
               </p>
-
-              <form className="space-y-4" action="#" method="POST">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="nom" className="block text-slate-400 text-xs uppercase tracking-wider mb-1.5">
-                      Nom *
-                    </label>
-                    <input
-                      id="nom" name="nom" type="text" required
-                      className="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-teal transition-colors"
-                      placeholder="Dupont"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="prenom" className="block text-slate-400 text-xs uppercase tracking-wider mb-1.5">
-                      Prénom *
-                    </label>
-                    <input
-                      id="prenom" name="prenom" type="text" required
-                      className="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-teal transition-colors"
-                      placeholder="Jean"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="contact" className="block text-slate-400 text-xs uppercase tracking-wider mb-1.5">
-                    Téléphone ou Email *
-                  </label>
-                  <input
-                    id="contact" name="contact" type="text" required
-                    className="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-teal transition-colors"
-                    placeholder="06 00 00 00 00 ou email@exemple.fr"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-slate-400 text-xs uppercase tracking-wider mb-1.5">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message" name="message" rows={5} required
-                    className="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-teal transition-colors resize-none"
-                    placeholder="Votre question ou demande d'information…"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full btn-primary justify-center text-base py-4 rounded-xl"
-                >
-                  <Mail className="w-4 h-4" />
-                  Envoyer le message
-                </button>
-
-                <p className="text-slate-600 text-xs text-center">
-                  Vos données sont confidentielles et ne seront jamais transmises à des tiers.
-                </p>
-              </form>
+              <LeadForm variant="contact" />
             </div>
 
             {/* Urgency + devis CTA */}

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import LeadForm from '@/components/LeadForm';
 import Footer from '@/components/Footer';
 import { SITE } from '@/lib/seo';
 
@@ -57,93 +58,7 @@ export default function DevisPage() {
             {/* Form */}
             <div className="card-dark">
               <h2 className="text-white font-bold text-xl mb-6">Votre demande</h2>
-              <form className="space-y-5" action="#" method="POST">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="prenom" className="block text-slate-400 text-xs uppercase tracking-wider mb-1.5">
-                      Prénom *
-                    </label>
-                    <input
-                      id="prenom" name="prenom" type="text" required
-                      className="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-teal transition-colors"
-                      placeholder="Jean"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="nom" className="block text-slate-400 text-xs uppercase tracking-wider mb-1.5">
-                      Nom *
-                    </label>
-                    <input
-                      id="nom" name="nom" type="text" required
-                      className="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-teal transition-colors"
-                      placeholder="Dupont"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="telephone" className="block text-slate-400 text-xs uppercase tracking-wider mb-1.5">
-                    Téléphone *
-                  </label>
-                  <input
-                    id="telephone" name="telephone" type="tel" required
-                    className="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-teal transition-colors"
-                    placeholder="06 00 00 00 00"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="ville" className="block text-slate-400 text-xs uppercase tracking-wider mb-1.5">
-                    Ville d'intervention *
-                  </label>
-                  <input
-                    id="ville" name="ville" type="text" required
-                    className="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-teal transition-colors"
-                    placeholder="Paris, Meaux, Chelles…"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="service" className="block text-slate-400 text-xs uppercase tracking-wider mb-1.5">
-                    Type de prestation
-                  </label>
-                  <select
-                    id="service" name="service"
-                    className="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-teal transition-colors"
-                  >
-                    <option value="">Sélectionner…</option>
-                    <option>Nettoyage Extrême</option>
-                    <option>Débarras Complet</option>
-                    <option>Désinfection Biocide</option>
-                    <option>Nettoyage Post-Mortem</option>
-                    <option>Syndrome de Diogène</option>
-                    <option>Autre / Urgence</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-slate-400 text-xs uppercase tracking-wider mb-1.5">
-                    Description de la situation
-                  </label>
-                  <textarea
-                    id="message" name="message" rows={4}
-                    className="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-teal transition-colors resize-none"
-                    placeholder="Décrivez brièvement la situation (optionnel — tout reste confidentiel)."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full btn-primary justify-center text-base py-4 rounded-xl"
-                >
-                  <Phone className="w-4 h-4" />
-                  Envoyer ma demande
-                </button>
-
-                <p className="text-slate-600 text-xs text-center">
-                  Vos données sont confidentielles et ne seront jamais transmises à des tiers.
-                </p>
-              </form>
+              <LeadForm variant="quote" />
             </div>
           </div>
         </section>
