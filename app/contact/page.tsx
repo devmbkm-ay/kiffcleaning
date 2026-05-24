@@ -75,15 +75,7 @@ const CONTACT_METHODS = [
     cta: "Voir la zone d'intervention",
     highlight: false,
   },
-  {
-    icon: Clock,
-    label: 'Disponibilité',
-    value: SITE.hours,
-    href: null,
-    note: 'Urgences traitées en priorité',
-    cta: null,
-    highlight: false,
-  },
+
 ];
 
 export default function ContactPage() {
@@ -117,25 +109,23 @@ export default function ContactPage() {
 
         {/* ── CONTACT METHODS ──────────────────────────── */}
         <section className="py-12 md:py-20 px-4 bg-navy-900">
-          <div className="max-w-6xl mx-auto grid sm:grid-cols-2 xl:grid-cols-5 gap-5">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {CONTACT_METHODS.map(({ icon: Icon, label, value, href, note, cta, highlight }) => (
               <div
                 key={label}
-                className={`flex flex-col gap-4 rounded-xl p-6 border transition-all duration-300 ${
-                  highlight
-                    ? 'bg-teal/10 border-teal/40 hover:bg-teal/15'
-                    : 'bg-navy-700 border-white/10 hover:border-teal/40'
-                }`}
+                className={`flex flex-col gap-4 rounded-xl p-6 border transition-all duration-300 min-w-0 w-full ${highlight
+                  ? 'bg-teal/10 border-teal/40 hover:bg-teal/15'
+                  : 'bg-navy-700 border-white/10 hover:border-teal/40'
+                  }`}
               >
-                <div className={`w-11 h-11 rounded-lg flex items-center justify-center ${
-                  highlight ? 'bg-teal/20 border border-teal/30' : 'bg-teal/10 border border-teal/20'
-                }`}>
+                <div className={`w-11 h-11 rounded-lg flex items-center justify-center ${highlight ? 'bg-teal/20 border border-teal/30' : 'bg-teal/10 border border-teal/20'
+                  }`}>
                   <Icon className="w-5 h-5 text-teal" />
                 </div>
-                <div className="min-w-0">
+                <div className="min-w-0 w-full">
                   <div className="text-slate-500 text-xs uppercase tracking-wider mb-1">{label}</div>
                   <div
-                    className={`font-bold text-sm break-words min-w-0 ${highlight ? 'text-teal' : 'text-white'}`}
+                    className={`font-bold text-sm [word-break:break-all] w-full ${highlight ? 'text-teal' : 'text-white'}`}
                   >
                     {value}
                   </div>
@@ -144,11 +134,11 @@ export default function ContactPage() {
                 {cta && href && (
                   href.startsWith('/')
                     ? <Link href={href} className="inline-flex items-center gap-1 text-xs font-semibold text-teal hover:underline mt-auto break-words">
-                        {cta} <ArrowRight className="w-3 h-3" />
-                      </Link>
+                      {cta} <ArrowRight className="w-3 h-3" />
+                    </Link>
                     : <a href={href} className="inline-flex items-center gap-1 text-xs font-semibold text-teal hover:underline mt-auto break-words">
-                        {cta} <ArrowRight className="w-3 h-3" />
-                      </a>
+                      {cta} <ArrowRight className="w-3 h-3" />
+                    </a>
                 )}
               </div>
             ))}
