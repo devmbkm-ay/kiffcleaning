@@ -69,7 +69,7 @@ const CONTACT_METHODS = [
   {
     icon: MapPin,
     label: 'Adresse',
-    value: '220 chemin de Crecy',
+    value: '220 chemin de Crécy',
     href: '/zones',
     note: `${SITE.address.postalCode} ${SITE.address.city}`,
     cta: "Voir la zone d'intervention",
@@ -132,7 +132,7 @@ export default function ContactPage() {
                 }`}>
                   <Icon className="w-5 h-5 text-teal" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="text-slate-500 text-xs uppercase tracking-wider mb-1">{label}</div>
                   <div
                     className={`font-bold text-sm break-words min-w-0 ${highlight ? 'text-teal' : 'text-white'}`}
@@ -143,10 +143,10 @@ export default function ContactPage() {
                 </div>
                 {cta && href && (
                   href.startsWith('/')
-                    ? <Link href={href} className="inline-flex items-center gap-1 text-xs font-semibold text-teal hover:underline mt-auto">
+                    ? <Link href={href} className="inline-flex items-center gap-1 text-xs font-semibold text-teal hover:underline mt-auto break-words">
                         {cta} <ArrowRight className="w-3 h-3" />
                       </Link>
-                    : <a href={href} className="inline-flex items-center gap-1 text-xs font-semibold text-teal hover:underline mt-auto">
+                    : <a href={href} className="inline-flex items-center gap-1 text-xs font-semibold text-teal hover:underline mt-auto break-words">
                         {cta} <ArrowRight className="w-3 h-3" />
                       </a>
                 )}

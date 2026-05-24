@@ -40,14 +40,14 @@ export default function DevisPage() {
                     <div className="w-10 h-10 rounded-lg bg-teal/10 border border-teal/20 flex items-center justify-center shrink-0">
                       <Icon className="w-4 h-4 text-teal" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <div className="text-slate-500 text-xs uppercase tracking-wider">{label}</div>
                       {href ? (
-                        <a href={href} className="text-white font-semibold text-sm hover:text-teal transition-colors">
+                        <a href={href} className="text-white font-semibold text-sm hover:text-teal transition-colors break-words">
                           {value}
                         </a>
                       ) : (
-                        <div className="text-white font-semibold text-sm">{value}</div>
+                        <div className="text-white font-semibold text-sm break-words">{value}</div>
                       )}
                     </div>
                   </div>
