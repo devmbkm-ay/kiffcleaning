@@ -9,7 +9,9 @@
       "Bash(npm install *)",
       "Bash(npm run *)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(git -C /home/ricardo/DEV/kiff-cleaning add app/services/[slug]/page.tsx components/Navbar.tsx lib/service-content.ts app/contact/)",
+      "Bash(git -C /home/ricardo/DEV/kiff-cleaning commit -m ' *)"
     ]
   }
 }

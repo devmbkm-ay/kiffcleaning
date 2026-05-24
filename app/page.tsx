@@ -146,11 +146,11 @@ export default function HomePage() {
         </section>
 
         {/* Stats strip below hero */}
-        <div className="bg-navy-800 py-10 px-4">
+        {/* <div className="bg-navy-800 py-10 px-4">
           <div className="max-w-3xl mx-auto">
             <StatsCounter stats={STATS} />
           </div>
-        </div>
+        </div> */}
 
         <CertificationStrip />
 
@@ -257,7 +257,7 @@ export default function HomePage() {
         </section>
 
         {/* ── AVANT / APRÈS ────────────────────────────── */}
-        <section className="py-14 md:py-24 px-4 bg-navy-800" aria-labelledby="before-after-title">
+        {/* <section className="py-14 md:py-24 px-4 bg-navy-800" aria-labelledby="before-after-title">
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <div className="text-center mb-10">
@@ -274,7 +274,7 @@ export default function HomePage() {
               />
             </ScrollReveal>
           </div>
-        </section>
+        </section> */}
 
         {/* ── ÉQUIPEMENT ───────────────────────────────── */}
         <section className="py-14 md:py-24 px-4 bg-navy-800" aria-labelledby="equipement-title">
@@ -307,19 +307,19 @@ export default function HomePage() {
         </section>
 
         {/* ── TÉMOIGNAGES ──────────────────────────────── */}
-        <section className="py-14 md:py-24 px-4 bg-navy-900" aria-labelledby="temoignages-title">
+        {/* <section className="py-14 md:py-24 px-4 bg-navy-900" aria-labelledby="temoignages-title">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
               <div className="text-center mb-8 md:mb-14">
                 <h2 id="temoignages-title" className="section-title mb-4">TÉMOIGNAGES</h2>
                 <p className="text-slate-400">La confiance de nos clients est notre meilleure référence.</p>
-              </div>
+              </div> */}
 
-              <div className="grid md:grid-cols-3 gap-6">
-                {TESTIMONIALS.map((t, i) => (
-                  <article key={i} className="card-dark flex flex-col gap-4">
-                    {/* Stars */}
-                    <div className="flex gap-1">
+        {/* <div className="grid md:grid-cols-3 gap-6"> */}
+        {/* {TESTIMONIALS.map((t, i) => (
+                  <article key={i} className="card-dark flex flex-col gap-4"> */}
+        {/* Stars */}
+        {/* <div className="flex gap-1">
                       {Array.from({ length: t.stars }).map((_, j) => (
                         <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
                       ))}
@@ -332,11 +332,11 @@ export default function HomePage() {
                       <div className="text-slate-500 text-xs">{t.role}</div>
                     </footer>
                   </article>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-        </section>
+                ))} */}
+        {/* </div> */}
+        {/* </ScrollReveal> */}
+        {/* </div>
+        </section> */}
 
         {/* ── ZONES D'INTERVENTION ─────────────────────── */}
         <section className="py-14 md:py-24 px-4 bg-navy-800" aria-labelledby="zones-title">
