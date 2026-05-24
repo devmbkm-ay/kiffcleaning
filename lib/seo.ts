@@ -11,7 +11,7 @@ export const SITE = {
   phoneRaw: '+33770108339',
   email: 'contact@kiffcleaningsolutions.com',
   address: {
-    street: '220 chemin de Crecy',
+    street: '220 chemin de Crécy',
     city: 'Mareuil-lès-Meaux',
     postalCode: '77100',
     region: 'Île-de-France',

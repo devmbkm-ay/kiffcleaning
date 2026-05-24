@@ -29,6 +29,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  const serviceZonePages: MetadataRoute.Sitemap = SERVICES.flatMap((s) =>
+    ZONES.map((z) => ({
+      url: `${base}/services/${s.slug}/${z.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
+  );
+
   const blogPages: MetadataRoute.Sitemap = ARTICLES.map((a) => ({
     url: `${base}/blog/${a.slug}`,
     lastModified: new Date(a.date),
@@ -36,5 +45,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...zonePages, ...servicePages, ...blogPages];
+  return [...staticPages, ...zonePages, ...servicePages, ...serviceZonePages, ...blogPages];
 }

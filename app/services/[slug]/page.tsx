@@ -204,7 +204,7 @@ export default async function ServicePage({ params }: Props) {
               {ZONES.map((z) => (
                 <Link
                   key={z.slug}
-                  href={`/zones/${z.slug}`}
+                  href={`/services/${service.slug}/${z.slug}`}
                   className="text-xs px-3 py-1.5 rounded-full border border-white/10 text-slate-400 hover:border-teal hover:text-teal transition-all bg-navy-700/50"
                 >
                   {service.name} {z.name}

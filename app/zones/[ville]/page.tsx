@@ -131,7 +131,7 @@ export default async function ZonePage({ params }: Props) {
               {SERVICES.slice(0, 3).map((s) => (
                 <Link
                   key={s.slug}
-                  href={`/services/${s.slug}`}
+                  href={`/services/${s.slug}/${zone.slug}`}
                   className="card-dark group"
                 >
                   <h3 className="text-white font-bold mb-2 group-hover:text-teal transition-colors">
@@ -143,6 +143,29 @@ export default async function ZonePage({ params }: Props) {
                   <p className="text-slate-500 text-xs">
                     Intervention possible à {zone.name} sous 24h.
                   </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-10 md:py-16 px-4 bg-navy-900">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="section-title text-center mb-4">
+              PAGES SERVICE + VILLE POUR {zone.name.toUpperCase()}
+            </h2>
+            <p className="text-slate-400 text-center mb-8 max-w-2xl mx-auto">
+              Accedez directement a nos pages locales dediees pour chaque intervention a {zone.name}.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {SERVICES.map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/services/${s.slug}/${zone.slug}`}
+                  className="flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/10 text-slate-300 text-sm hover:border-teal hover:text-teal transition-all bg-navy-700/50"
+                >
+                  <MapPin className="w-3.5 h-3.5" />
+                  {s.name} {zone.name}
                 </Link>
               ))}
             </div>
