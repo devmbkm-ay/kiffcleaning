@@ -134,7 +134,9 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <div className="text-slate-500 text-xs uppercase tracking-wider mb-1">{label}</div>
-                  <div className={`font-bold text-sm ${highlight ? 'text-teal' : 'text-white'}`}>
+                  <div
+                    className={`font-bold text-sm break-words min-w-0 ${highlight ? 'text-teal' : 'text-white'}`}
+                  >
                     {value}
                   </div>
                   <div className="text-slate-500 text-xs mt-1">{note}</div>
