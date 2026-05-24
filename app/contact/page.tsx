@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Clock, ArrowRight, MessageSquare } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, ArrowRight, MessageSquare, MessageCircle } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CtaBanner from '@/components/CtaBanner';
@@ -53,17 +53,26 @@ const CONTACT_METHODS = [
     label: 'Email',
     value: SITE.email,
     href: `mailto:${SITE.email}`,
-    note: 'Réponse sous 2h en heures ouvrées',
+    note: 'Réponse sous 4h',
     cta: 'Envoyer un email',
     highlight: false,
   },
   {
+    icon: MessageCircle,
+    label: 'WhatsApp',
+    value: SITE.whatsapp,
+    href: `https://wa.me/${SITE.whatsappRaw.replace('+', '')}`,
+    note: 'Message rapide',
+    cta: 'Ouvrir WhatsApp',
+    highlight: false,
+  },
+  {
     icon: MapPin,
-    label: 'Zone d\'intervention',
-    value: 'Île-de-France',
+    label: 'Adresse',
+    value: '220 chemin de Crecy',
     href: '/zones',
-    note: `Basé à ${SITE.address.city} (${SITE.address.postalCode})`,
-    cta: 'Voir les zones',
+    note: `${SITE.address.postalCode} ${SITE.address.city}`,
+    cta: "Voir la zone d'intervention",
     highlight: false,
   },
   {
@@ -108,7 +117,7 @@ export default function ContactPage() {
 
         {/* ── CONTACT METHODS ──────────────────────────── */}
         <section className="py-12 md:py-20 px-4 bg-navy-900">
-          <div className="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="max-w-6xl mx-auto grid sm:grid-cols-2 xl:grid-cols-5 gap-5">
             {CONTACT_METHODS.map(({ icon: Icon, label, value, href, note, cta, highlight }) => (
               <div
                 key={label}
@@ -203,7 +212,9 @@ export default function ContactPage() {
                   Val-de-Marne, Seine-et-Marne, Yvelines, Essonne, Val-d'Oise.
                 </p>
                 <p className="text-slate-500 text-xs">
-                  Basé à {SITE.address.city} ({SITE.address.postalCode})
+                  {SITE.address.street}<br />
+                  {SITE.address.postalCode} {SITE.address.city}<br />
+                  {SITE.address.region}, France
                 </p>
               </div>
             </div>

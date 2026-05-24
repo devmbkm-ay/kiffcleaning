@@ -133,7 +133,7 @@ export default function LeadForm({ variant }: LeadFormProps) {
               type="tel"
               required
               className="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-teal transition-colors"
-              placeholder="06 00 00 00 00"
+              placeholder="07 70 10 83 39"
             />
           </div>
 
@@ -206,7 +206,7 @@ export default function LeadForm({ variant }: LeadFormProps) {
             type="text"
             required
             className="w-full bg-navy-800 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-slate-600 focus:outline-none focus:border-teal transition-colors"
-            placeholder="06 00 00 00 00 ou email@exemple.fr"
+            placeholder="07 70 10 83 39 ou email@exemple.fr"
           />
         </div>
       )}

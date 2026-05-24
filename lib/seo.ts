@@ -7,17 +7,19 @@ export const SITE = {
   description:
     'Kiff Cleaning Solutions : spécialiste du nettoyage extrême, débarras complet, désinfection biocide et syndrome de Diogène en Île-de-France. Intervention 24h/24, 7j/7. Discrétion garantie. Devis gratuit.',
   url: 'https://www.kiffcleaningsolutions.fr',
-  phone: '06 00 00 00 00',
-  phoneRaw: '+33600000000',
-  email: 'contact@kiffcleaning.fr',
+  phone: '07 70 10 83 39',
+  phoneRaw: '+33770108339',
+  email: 'contact@kiffcleaningsolutions.com',
   address: {
-    street: '',
+    street: '220 chemin de Crecy',
     city: 'Mareuil-lès-Meaux',
     postalCode: '77100',
     region: 'Île-de-France',
     country: 'FR',
   },
   hours: '24h/24 - 7j/7',
+  whatsapp: '07 70 10 83 39',
+  whatsappRaw: '+33770108339',
   geo: {
     lat: 48.9333,
     lng: 2.9,
