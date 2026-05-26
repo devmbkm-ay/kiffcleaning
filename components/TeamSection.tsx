@@ -85,14 +85,6 @@ export function TeamSection({
                     ))}
                 </div>
 
-                {/* CTA pour mises à jour photos */}
-                <div className="mt-12 p-6 rounded-lg bg-amber-50 border border-amber-200 text-center">
-                    <p className="text-sm text-slate-700">
-                        💡 <strong>À mettre à jour :</strong> Ces photos sont des placeholders.
-                        Remplacez-les par des photos réelles de votre équipe (portraits professionnels)
-                        pour renforcer les signaux E-E-A-T auprès de Google.
-                    </p>
-                </div>
             </div>
         </section>
     );
