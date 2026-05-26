@@ -21,6 +21,7 @@ module.exports = {
         },
         green: {
           cta: '#22c55e',
+          kiff: '#1d8659',
         },
       },
       fontFamily: {
