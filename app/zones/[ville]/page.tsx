@@ -5,7 +5,8 @@ import { Phone, MapPin, CheckCircle2, ArrowRight, Clock } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CtaBanner from '@/components/CtaBanner';
-import { SITE, SERVICES, ZONES } from '@/lib/seo';
+import { SITE, ZONES } from '@/lib/seo';
+import { getAllServices } from '@/lib/services-data';
 
 interface Props {
   params: Promise<{ ville: string }>;
@@ -68,6 +69,7 @@ export default async function ZonePage({ params }: Props) {
   };
 
   const nearbyZones = ZONES.filter((z) => z.dept === zone.dept && z.slug !== zone.slug).slice(0, 4);
+  const services = getAllServices();
 
   return (
     <>
@@ -128,17 +130,17 @@ export default async function ZonePage({ params }: Props) {
               rapide et des équipes locales.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
-              {SERVICES.slice(0, 3).map((s) => (
+              {services.slice(0, 3).map((s) => (
                 <Link
                   key={s.slug}
-                  href={`/services/${s.slug}/${zone.slug}`}
+                  href={`/services/${s.slug}`}
                   className="card-dark group"
                 >
                   <h3 className="text-white font-bold mb-2 group-hover:text-teal transition-colors">
-                    {s.name}
+                    {s.shortTitle}
                   </h3>
                   <p className="text-slate-400 text-sm leading-relaxed mb-3">
-                    {s.shortDesc}
+                    {s.metaDescription}
                   </p>
                   <p className="text-slate-500 text-xs">
                     Intervention possible à {zone.name} sous 24h.
@@ -158,14 +160,14 @@ export default async function ZonePage({ params }: Props) {
               Accedez directement a nos pages locales dediees pour chaque intervention a {zone.name}.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              {SERVICES.map((s) => (
+              {services.map((s) => (
                 <Link
                   key={s.slug}
-                  href={`/services/${s.slug}/${zone.slug}`}
+                  href={`/services/${s.slug}`}
                   className="flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/10 text-slate-300 text-sm hover:border-teal hover:text-teal transition-all bg-navy-700/50"
                 >
                   <MapPin className="w-3.5 h-3.5" />
-                  {s.name} {zone.name}
+                  {s.shortTitle} à {zone.name}
                 </Link>
               ))}
             </div>
