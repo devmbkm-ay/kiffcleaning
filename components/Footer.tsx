@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-import { SITE, SERVICES } from '@/lib/seo';
+import { SITE } from '@/lib/seo';
+import { getAllServices } from '@/lib/services-data';
 
 export default function Footer() {
+  const services = getAllServices();
+
   return (
     <footer className="bg-[#0a1520] border-t border-white/5 pb-20 md:pb-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
@@ -12,11 +15,11 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-2.5 mb-4">
             <Image
-              src="/images/logo.png"
+              src="/images/logo.webp"
               alt="Kiff Cleaning Solutions"
-              width={32}
-              height={32}
-              className="object-contain"
+              width={512}
+              height={512}
+              className="object-contain w-8 h-8"
             />
             <span className="text-white font-extrabold text-sm tracking-widest uppercase">
               KIFF CLEANING
@@ -34,13 +37,13 @@ export default function Footer() {
             NOS SERVICES
           </h3>
           <ul className="space-y-2.5">
-            {SERVICES.map((s) => (
+            {services.map((s) => (
               <li key={s.slug}>
                 <Link
                   href={`/services/${s.slug}`}
                   className="text-slate-400 text-sm hover:text-teal transition-colors"
                 >
-                  {s.name}
+                  {s.shortTitle}
                 </Link>
               </li>
             ))}
@@ -101,9 +104,15 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/5 px-4 sm:px-6 lg:px-8 py-5">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
-          <span>© 2025 Kiff Cleaning Solutions. Tous droits réservés.</span>
-          <span>Véhicules banalisés • Discrétion totale • Devis gratuit</span>
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+          <span>© {new Date().getFullYear()} Kiff Cleaning Solutions. Tous droits réservés.</span>
+          <div className="flex items-center gap-4">
+            <Link href="/mentions-legales" className="hover:text-slate-300 transition-colors">Mentions légales</Link>
+            <span>·</span>
+            <Link href="/politique-confidentialite" className="hover:text-slate-300 transition-colors">Confidentialité</Link>
+            <span>·</span>
+            <span>Véhicules banalisés · Devis gratuit</span>
+          </div>
         </div>
       </div>
     </footer>

@@ -18,10 +18,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 shrink-0">
           <Image
-            src="/images/logo.png"
+            src="/images/logo.webp"
             alt="Kiff Cleaning Solutions"
-            width={64}
-            height={64}
+            width={512}
+            height={512}
             className="object-contain w-10 h-10 sm:w-14 sm:h-14"
             priority
           />
