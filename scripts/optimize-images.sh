@@ -20,6 +20,9 @@ OUTPUT_DIR="${2:-public/images/optimized}"
 MAX_WIDTH="${MAX_WIDTH:-1920}"
 WEBP_QUALITY="${WEBP_QUALITY:-85}"
 
+TEAM_WIDTH="${TEAM_WIDTH:-800}"
+TEAM_HEIGHT="${TEAM_HEIGHT:-600}"
+
 # ─────────────────────────────────────────────────────────────
 # Checks
 # ─────────────────────────────────────────────────────────────
@@ -54,7 +57,8 @@ fi
 echo "Found ${#IMAGES[@]} image(s)"
 echo "Input:  $INPUT_DIR"
 echo "Output: $OUTPUT_DIR"
-echo "Settings: max-width=${MAX_WIDTH}px, quality=${WEBP_QUALITY}"
+# echo "Settings: max-width=${MAX_WIDTH}px, quality=${WEBP_QUALITY}"
+echo "Settings: team-size=${TEAM_WIDTH}x${TEAM_HEIGHT}px, quality=${WEBP_QUALITY}"
 echo ""
 
 # ─────────────────────────────────────────────────────────────
@@ -67,13 +71,22 @@ for img in "${IMAGES[@]}"; do
   output="$OUTPUT_DIR/${name}.webp"
 
   # scale: downscale if wider than MAX_WIDTH, keep aspect ratio, never upscale
-  ffmpeg -y -loglevel error \
-    -i "$img" \
-    -vf "scale='min(iw,${MAX_WIDTH}):-2'" \
-    -c:v libwebp \
-    -quality "${WEBP_QUALITY}" \
-    -compression_level 6 \
-    "$output"
+  # ffmpeg -y -loglevel error \
+  #   -i "$img" \
+  #   -vf "scale='min(iw,${MAX_WIDTH}):-2'" \
+  #   -c:v libwebp \
+  #   -quality "${WEBP_QUALITY}" \
+  #   -compression_level 6 \
+  #   "$output"
+
+  ffmpeg -y \ -y -hide_banner -loglevel error -nostats \
+  -i "$img" \
+  -vf "scale=${TEAM_WIDTH}:${TEAM_HEIGHT}:force_original_aspect_ratio=increase,crop=${TEAM_WIDTH}:${TEAM_HEIGHT}" \
+  -c:v libwebp \
+  -quality "${WEBP_QUALITY}" \
+  -compression_level 6 \
+  -preset photo \
+  "$output"
 done
 
 # ─────────────────────────────────────────────────────────────

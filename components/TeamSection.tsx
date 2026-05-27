@@ -8,7 +8,7 @@ import Image from 'next/image';
 interface TeamMember {
     name: string;
     role: string;
-    imageUrl: string;
+    image: string;
     description: string;
 }
 
@@ -23,21 +23,21 @@ const DEFAULT_TEAM: TeamMember[] = [
     {
         name: 'Équipe Intervention Nettoyage Extrême',
         role: 'Techniciens Qualifiés - Niveau 1',
-        imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop',
+        image: '/images/team/optimized/isabelle.webp',
         description:
             'Formés aux protocoles biocides. Équipements EPI catégorie 3. Maîtrise des risques biologiques et chimiques.',
     },
     {
         name: 'Équipe Débarras & Manutention',
         role: 'Compagnons Qualifiés - Portage Lourd',
-        imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+        image: '/images/team/optimized/yassine.webp',
         description:
             'Experts en manutention lourde. Sécurité garantie sur escaliers et accès difficiles. Discrétion totale.',
     },
     {
         name: 'Chef de Projet & Coordination',
         role: 'Pilotage Chantier & Qualité',
-        imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
+        image: '/images/team/optimized/alan.webp',
         description:
             'Gestion de tous les chantiers. Respect du cahier des charges. Contrôle qualité final impeccable.',
     },
@@ -66,7 +66,7 @@ export function TeamSection({
                             {/* Image placeholder - à remplacer par vraies photos */}
                             <div className="relative w-full aspect-square bg-gradient-to-br from-slate-200 to-slate-300 overflow-hidden">
                                 <Image
-                                    src={member.imageUrl}
+                                    src={member.image}
                                     alt={member.name}
                                     fill
                                     className="object-cover"

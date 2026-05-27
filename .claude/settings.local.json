@@ -11,7 +11,9 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(git -C /home/ricardo/DEV/kiff-cleaning add app/services/[slug]/page.tsx components/Navbar.tsx lib/service-content.ts app/contact/)",
-      "Bash(git -C /home/ricardo/DEV/kiff-cleaning commit -m ' *)"
+      "Bash(git -C /home/ricardo/DEV/kiff-cleaning commit -m ' *)",
+      "Bash(identify /home/ricardo/DEV/kiff-cleaning/public/images/logo/originals/logo-kiff.png)",
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('/home/ricardo/DEV/kiff-cleaning/public/images/logo/originals/logo-kiff.png'\\); print\\(f'Size: {img.size}, Mode: {img.mode}'\\)\")"
     ]
   }
 }
